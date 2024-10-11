@@ -19,6 +19,6 @@ process EXTRACT_LR {
     
     head -1 standardSize.txt | awk '{printf("%d\\n",\$0+=\$0<0?-0.5:0.5)}' > standardSizeFinal.txt
     
-    head -1 standardSizeFinal.txt | numfmt --to=si > shortenedSizeFinal.txt
+    head -1 standardSizeFinal.txt | numfmt --to=si --format %.2f --round=nearest > shortenedSizeFinal.txt
     """
 }

@@ -73,7 +73,7 @@ merqury_score=\$(sed -n '36p' "$input_file" | awk '{print \$1}')
 
 
 # Output the formatted results
-echo -e "Assembly\t\$assembly\nNumber of contigs\t\$contigs\nLargest contig\t\$largest_contig\nTotal length\t\$total_length\nGC (%)\t\$gc_percent\nN50\t\$n50\nN90\t\$n90\nauN\t\$aun\nL50\t\$l50\nL90\t\$l90\n# N's per 100 kbp\t\$ns_per_100kbp\n\nCompleasm completeness scores\nComplete and single-copy BUSCOs (S): \$S_count (\$S)\nComplete and duplicated BUSCOs (D): \$D_count (\$D)\nFragmented BUSCOs (F): \$F_count (\$F)\nMissing BUSCOs (M): \$M_count (\$M)\nTotal BUSCO groups searched (N): \$N\n\nMerqury quality value\t\$merqury_score" >> ${prefix}_qc.tsv
+echo -e "Assembly\t\$assembly\nNumber of contigs\t\$contigs\nLargest contig\t\$largest_contig\nTotal length\t\$total_length\nGC (%)\t\$gc_percent\nN50\t\$n50\nN90\t\$n90\nauN\t\$aun\nL50\t\$l50\nL90\t\$l90\n# N's per 100 kbp\t\$ns_per_100kbp\n\nCompleasm\tS:\$S,D:\$D,F:\$F,M:\$M,n:\$N\nComplete and single-copy BUSCOs (S): \$S_count (\$S)\nComplete and duplicated BUSCOs (D): \$D_count (\$D)\nFragmented BUSCOs (F): \$F_count (\$F)\nMissing BUSCOs (M): \$M_count (\$M)\nTotal BUSCO groups searched (N): \$N\n\nMerqury quality value\t\$merqury_score" >> ${prefix}_qc.tsv
 
     """
     }

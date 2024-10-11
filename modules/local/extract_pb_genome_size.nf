@@ -16,6 +16,6 @@ process EXTRACT_PB {
     
     head -1 standardSize.txt > standardSizeFinal.txt
     
-    head -1 standardSizeFinal.txt | numfmt --to=si > shortenedSizeFinal.txt
+    head -1 standardSizeFinal.txt | numfmt --to=si --format %.2f --round=nearest > shortenedSizeFinal.txt
     """
 }

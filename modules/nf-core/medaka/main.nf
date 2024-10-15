@@ -21,7 +21,7 @@ process MEDAKA {
 
     script:
     def args = task.ext.args ?: ''
-    //def prefix = task.ext.prefix ?: "${meta.id}"
+    def prefix = task.ext.prefix ?: "${meta.id}"
     """
     medaka_consensus \\
         -t $task.cpus \\
@@ -31,7 +31,7 @@ process MEDAKA {
         $args
     
     cd medaka
-    mv consensus.fasta medaka_flye.fasta
+    mv consensus.fasta medaka_${prefix}.fasta
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

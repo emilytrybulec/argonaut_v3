@@ -8,7 +8,7 @@ process MEDAKA {
         'biocontainers/medaka:1.8.0--py39h771796b_0' }"
 
     input:
-    tuple val(meta), path(reads)
+    tuple val(meta2), path(reads)
     tuple val(meta), path(assembly)
     val model
 
